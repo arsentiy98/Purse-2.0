@@ -5,3 +5,4 @@ D:\SVN\Team Purse\Purse\bin\Debug\Purse.exe.config
 =======
 C:\Users\s24-vp\Desktop\Новая папка\Purse\bin\Debug\Purse.exe.config
 >>>>>>> .r25
+D:\GitPurse\Purse\bin\Debug\Purse.exe.config
