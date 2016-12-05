@@ -1,0 +1,9 @@
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\bin\Debug\purse_mine.exe.config
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\bin\Debug\purse_mine.exe
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\bin\Debug\purse_mine.pdb
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\obj\Debug\purse_mine.Form1.resources
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\obj\Debug\purse_mine.Properties.Resources.resources
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\obj\Debug\purse_mine.csproj.GenerateResource.Cache
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\obj\Debug\purse_mine.exe
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\obj\Debug\purse_mine.pdb
+C:\Users\Olha_Horban\Desktop\purse_mine\purse_mine\obj\Debug\purse_mine.credit_card_form.resources
