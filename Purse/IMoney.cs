@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Purse
 {
-    interface IMoney
+    public interface IMoney
     {
         void SetCash(int a);
         int GetCash();
