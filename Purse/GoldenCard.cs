@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,43 +7,53 @@ using System.Windows.Forms;
 
 namespace Purse
 {
-    class GoldenCard
+    public class GoldenCard
     {
-        IMoney money1;
-        double percent = 0;
+        IMoney money1 = new Money();
+        double percent = 0.07;
         string valuta = "UAH";
 
-        public void GetBalance()
+        public double GetBalance()
         {
-            MessageBox.Show("Your balance: " + money1.GetCash() + ".");
+            return money1.GetCash();
         }
-        public void Fill(int cash)
+        public void Fill(double cash)
         {
-            money1.SetCash(cash);
+            if(valuta == "UAH")
+            {
+                money1.SetCash(cash);
+            }
+            else
+            {
+                ConvertToUAH();
+                money1.SetCash(cash);
+            }
             MessageBox.Show("Your balance filled.");
         }
-        public void Withdraw(int cash, int per)
+        public double Withdraw(double cash)
         {
             if ((money1.GetCash() - cash) < 0)
             {
                 MessageBox.Show("Your balance is too small to make a withdraw.");
+                return 0;
             }
             else
             {
-                money1.SetCash(money1.GetCash() - cash);
-                money1.SetCash(money1.GetCash() + cash * per);
-                MessageBox.Show("Succsess.");
+                if (valuta == "USD")
+                {
+                    money1.SetCash(money1.GetCash() - cash);
+                    //money1.SetCash(money1.GetCash() + cash * percent);
+                    MessageBox.Show("Succsess.");
+                    return (cash + cash * percent) * 27;
+                }
+                else
+                {
+                    money1.SetCash(money1.GetCash() - cash);
+                    //money1.SetCash(money1.GetCash() + cash * percent);
+                    MessageBox.Show("Succsess.");
+                    return (cash + cash * percent);
+                }
             }
-        }
-        public void AddGoldBonus7()
-        {
-            percent = 0.7;
-            MessageBox.Show("Your bonus is 7% from withdraw.");
-        }
-        public void CancelGoldBonus7()
-        {
-            percent = 0;
-            MessageBox.Show("Succsess.");
         }
 
         public void ConvertToUSD()
@@ -52,7 +62,6 @@ namespace Purse
             {
                 money1.SetCash(money1.GetCash() / 27);
                 valuta = "USD";
-                MessageBox.Show("Converted to " + valuta + ".");
             }
             else
             {
@@ -65,7 +74,6 @@ namespace Purse
             {
                 money1.SetCash(money1.GetCash() * 27);
                 valuta = "UAH";
-                MessageBox.Show("Converted to " + valuta + ".");
             }
             else
             {
