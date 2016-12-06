@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,9 @@ namespace Purse
     \brief GoldenCard class.
     \author Bogdan Lotysh
     \version 1.0
+    Creating golden card with 5 methods. This card includes 7% bonus 
+    from withdraw to overall balance. Make profit by this card.
+    Converting to UAH & USD included.
 */
     public class GoldenCard
     {
@@ -30,8 +33,6 @@ namespace Purse
 
         /*!
             \param double
-
-            \return void
 
             User enter value of money, wich after will be filled.
         */
@@ -81,9 +82,6 @@ namespace Purse
             }
         }
         /*!
-
-    \return void
-
      Converting user's money into USD.
 */
         public void ConvertToUSD()
@@ -99,8 +97,6 @@ namespace Purse
             }
         }
         /*!
-
-\return void
 
 Converting user's money into UAH.
 */
