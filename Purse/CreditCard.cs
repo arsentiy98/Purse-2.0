@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace Purse
 {
-    class CreditCard
+    public class CreditCard
     {
-        IMoney money;
+        /*IMoney money;
         int Number;
 
         void SetNumber(int num) { Number = num; }
@@ -27,7 +27,7 @@ namespace Purse
                 money.SetCash(current - amount);
             }
         }
-
+        */
 
     }
 }

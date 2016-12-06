@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,16 +17,17 @@ namespace Purse
         {
             return money1.GetCash();
         }
+
         public void Fill(double cash)
         {
-            if(valuta == "UAH")
+            if (valuta == "UAH")
             {
-                money1.SetCash(cash);
+                money1.SetCash(money1.GetCash() + cash);
             }
             else
             {
                 ConvertToUAH();
-                money1.SetCash(cash);
+                money1.SetCash(money1.GetCash() + cash);
             }
             MessageBox.Show("Your balance filled.");
         }

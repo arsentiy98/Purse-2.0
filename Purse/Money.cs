@@ -8,13 +8,13 @@ namespace Purse
 {
     public class Money : IMoney
     {
-        int cash;
+        double cash;
 
-        public void SetCash(int a)
+        public void SetCash(double a)
         {
             cash = a;
         }
-        public int GetCash()
+        public double GetCash()
         {
             return cash;
         }
