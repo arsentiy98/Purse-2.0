@@ -7,30 +7,54 @@ using System.Windows.Forms;
 
 namespace Purse
 {
+    /**
+    \brief GoldenCard class.
+    \author Bogdan Lotysh
+    \version 1.0
+*/
     public class GoldenCard
     {
         IMoney money1 = new Money();
         double percent = 0.07;
         string valuta = "UAH";
 
+        /*!
+            \return double
+
+            Shows users's balance.
+        */
         public double GetBalance()
         {
             return money1.GetCash();
         }
 
+        /*!
+            \param double
+
+            \return void
+
+            User enter value of money, wich after will be filled.
+        */
         public void Fill(double cash)
         {
-            if (valuta == "UAH")
+            if(valuta == "UAH")
             {
-                money1.SetCash(money1.GetCash() + cash);
+                money1.SetCash(cash);
             }
             else
             {
                 ConvertToUAH();
-                money1.SetCash(money1.GetCash() + cash);
+                money1.SetCash(cash);
             }
             MessageBox.Show("Your balance filled.");
         }
+        /*!
+            \param double
+
+            \return double
+
+             User enter value of money, wich after will be filled.
+*/
         public double Withdraw(double cash)
         {
             if ((money1.GetCash() - cash) < 0)
@@ -56,7 +80,12 @@ namespace Purse
                 }
             }
         }
+        /*!
 
+    \return void
+
+     Converting user's money into USD.
+*/
         public void ConvertToUSD()
         {
             if (valuta != "USD")
@@ -69,6 +98,12 @@ namespace Purse
                 MessageBox.Show("You've already that currency!");
             }
         }
+        /*!
+
+\return void
+
+Converting user's money into UAH.
+*/
         public void ConvertToUAH()
         {
             if (valuta != "UAH")
