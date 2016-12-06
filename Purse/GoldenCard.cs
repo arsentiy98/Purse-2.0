@@ -39,12 +39,12 @@ namespace Purse
         {
             if(valuta == "UAH")
             {
-                money1.SetCash(cash);
+                money1.SetCash(money1.GetCash() + cash);
             }
             else
             {
                 ConvertToUAH();
-                money1.SetCash(cash);
+                money1.SetCash(money1.GetCash() + cash);
             }
             MessageBox.Show("Your balance filled.");
         }
