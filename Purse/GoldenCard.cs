@@ -11,6 +11,8 @@ namespace Purse
     \brief GoldenCard class.
     \author Bogdan Lotysh
     \version 1.0
+    
+    
     Creating golden card with 5 methods. This card includes 7% bonus 
     from withdraw to overall balance. Make profit by this card.
     Converting to UAH & USD included.
