@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +10,7 @@ namespace Purse
     /**
     \brief GoldenCard class.
     \author Bogdan Lotysh
-    \version 1.0
-    
-    
+
     Creating golden card with 5 methods. This card includes 7% bonus 
     from withdraw to overall balance. Make profit by this card.
     Converting to UAH & USD included.
@@ -25,7 +23,6 @@ namespace Purse
 
         /*!
             \return double
-
             Shows users's balance.
         */
         public double GetBalance()
@@ -35,12 +32,11 @@ namespace Purse
 
         /*!
             \param double
-
             User enter value of money, wich after will be filled.
         */
         public void Fill(double cash)
         {
-            if(valuta == "UAH")
+            if (valuta == "UAH")
             {
                 money1.SetCash(money1.GetCash() + cash);
             }
@@ -53,9 +49,7 @@ namespace Purse
         }
         /*!
             \param double
-
             \return double
-
              User enter value of money, wich after will be filled.
 */
         public double Withdraw(double cash)
@@ -99,7 +93,6 @@ namespace Purse
             }
         }
         /*!
-
 Converting user's money into UAH.
 */
         public void ConvertToUAH()
