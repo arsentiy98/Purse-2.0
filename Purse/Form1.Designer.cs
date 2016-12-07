@@ -47,8 +47,7 @@
             this.label_creditBalance = new System.Windows.Forms.Label();
             this.button_withdrawCredit = new System.Windows.Forms.Button();
             this.button_TakeCredit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_TakeCredit = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -183,12 +182,13 @@
             // 
             // button_ReturnCredit
             // 
-            this.button_ReturnCredit.Location = new System.Drawing.Point(243, 221);
+            this.button_ReturnCredit.Location = new System.Drawing.Point(242, 186);
             this.button_ReturnCredit.Name = "button_ReturnCredit";
-            this.button_ReturnCredit.Size = new System.Drawing.Size(265, 23);
+            this.button_ReturnCredit.Size = new System.Drawing.Size(174, 23);
             this.button_ReturnCredit.TabIndex = 20;
             this.button_ReturnCredit.Text = "Return Credit";
             this.button_ReturnCredit.UseVisualStyleBackColor = true;
+            this.button_ReturnCredit.Click += new System.EventHandler(this.button_ReturnCredit_Click);
             // 
             // label4
             // 
@@ -210,35 +210,30 @@
             // 
             // button_withdrawCredit
             // 
-            this.button_withdrawCredit.Location = new System.Drawing.Point(433, 191);
+            this.button_withdrawCredit.Location = new System.Drawing.Point(433, 186);
             this.button_withdrawCredit.Name = "button_withdrawCredit";
             this.button_withdrawCredit.Size = new System.Drawing.Size(75, 23);
             this.button_withdrawCredit.TabIndex = 17;
             this.button_withdrawCredit.Text = "Withdraw";
             this.button_withdrawCredit.UseVisualStyleBackColor = true;
+            this.button_withdrawCredit.Click += new System.EventHandler(this.button_withdrawCredit_Click);
             // 
             // button_TakeCredit
             // 
-            this.button_TakeCredit.Location = new System.Drawing.Point(433, 162);
+            this.button_TakeCredit.Location = new System.Drawing.Point(433, 157);
             this.button_TakeCredit.Name = "button_TakeCredit";
             this.button_TakeCredit.Size = new System.Drawing.Size(75, 23);
             this.button_TakeCredit.TabIndex = 16;
             this.button_TakeCredit.Text = "Take Credit";
             this.button_TakeCredit.UseVisualStyleBackColor = true;
+            this.button_TakeCredit.Click += new System.EventHandler(this.button_TakeCredit_Click);
             // 
-            // textBox1
+            // textBox_TakeCredit
             // 
-            this.textBox1.Location = new System.Drawing.Point(243, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(242, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 14;
+            this.textBox_TakeCredit.Location = new System.Drawing.Point(242, 159);
+            this.textBox_TakeCredit.Name = "textBox_TakeCredit";
+            this.textBox_TakeCredit.Size = new System.Drawing.Size(175, 20);
+            this.textBox_TakeCredit.TabIndex = 14;
             // 
             // label6
             // 
@@ -337,8 +332,7 @@
             this.Controls.Add(this.label_creditBalance);
             this.Controls.Add(this.button_withdrawCredit);
             this.Controls.Add(this.button_TakeCredit);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox_TakeCredit);
             this.Controls.Add(this.label_valuta);
             this.Controls.Add(this.button_ConvertUah);
             this.Controls.Add(this.button_ConvertUsd);
@@ -381,8 +375,7 @@
         private System.Windows.Forms.Label label_creditBalance;
         private System.Windows.Forms.Button button_withdrawCredit;
         private System.Windows.Forms.Button button_TakeCredit;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_TakeCredit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

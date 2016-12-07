@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace Purse
 {
+    /// Форма, в которой представлено управление классом Purse
+
     public partial class Form1 : Form
     {
         Purse purse = new Purse();
@@ -18,7 +20,6 @@ namespace Purse
         {
             InitializeComponent();
             this.Text = "Cash : " + purse.cash.GetCash().ToString() + "  UAH";
-            //label_cash.Text = purse.cash.GetCash().ToString();
         }
 
         private void button_Fill_Click(object sender, EventArgs e)
@@ -35,7 +36,6 @@ namespace Purse
                     purse.goldCard.Fill(Convert.ToDouble(textBox_fill.Text));
                     label_goldBalance.Text = purse.goldCard.GetBalance().ToString();
                     this.Text = "Cash : " + purse.cash.GetCash().ToString() + "  UAH";
-                    //label_cash.Text = purse.cash.GetCash().ToString();
                 }
             }
             catch
@@ -52,7 +52,6 @@ namespace Purse
                 purse.cash.SetCash(purse.cash.GetCash() + res);
                 label_goldBalance.Text = purse.goldCard.GetBalance().ToString();
                 this.Text = "Cash : " + purse.cash.GetCash().ToString() + "  UAH";
-                //label_cash.Text = purse.cash.GetCash().ToString();
             }
             catch
             {
@@ -72,6 +71,48 @@ namespace Purse
             purse.goldCard.ConvertToUAH();
             label_goldBalance.Text = purse.goldCard.GetBalance().ToString();
             label_valuta.Text = "UAH";
+        }
+
+        private void button_TakeCredit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (purse.cash.GetCash() < Convert.ToDouble(textBox_TakeCredit.Text))
+                    MessageBox.Show("Not enough money");
+                else if(purse.credCard.GetCredit() == 0)
+                    MessageBox.Show("No need to pay");
+                else
+                {
+                    purse.credCard.PayCredit(purse.cash);
+                    label_creditBalance.Text = purse.credCard.GetBalance().ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Type digit amount");
+            }
+        }
+
+        private void button_withdrawCredit_Click(object sender, EventArgs e)
+        {
+            double res = purse.credCard.Withdraw(purse.credCard.GetBalance());
+            purse.cash.SetCash(purse.cash.GetCash() + res);
+            label_creditBalance.Text = purse.credCard.GetBalance().ToString();
+            this.Text = "Cash : " + purse.cash.GetCash().ToString() + "  UAH";
+        }
+
+        private void button_ReturnCredit_Click(object sender, EventArgs e)
+        {
+            if (purse.cash.GetCash() < Convert.ToDouble(textBox_TakeCredit.Text))
+                MessageBox.Show("Not enough money");
+            else if (purse.credCard.GetCredit() != 0)
+                MessageBox.Show("You already have taken credit. Pay previous to take new one.");
+            else
+            {
+                purse.cash.SetCash(purse.cash.GetCash() - Convert.ToDouble(textBox_fill.Text));
+                purse.credCard.CalculateTheCredit(textBox_TakeCredit.Text);
+                label_creditBalance.Text = purse.credCard.GetBalance().ToString();
+            }
         }
     }
 }
